@@ -70,9 +70,6 @@
                                     <constraint firstAttribute="width" constant="386" id="lNT-HW-5zd"/>
                                     <constraint firstAttribute="height" constant="30" id="xHc-PD-aB2"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fq7-Ji-A4b"/>
-                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g73-G7-M9A">
                                 <rect key="frame" x="11" y="47" width="71" height="21"/>
