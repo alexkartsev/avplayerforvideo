@@ -8,11 +8,18 @@
 
 #import "AVPlayerClass.h"
 
+@interface AVPlayerClass()
+@end
+
 @implementation AVPlayerClass
 
 +(Class) layerClass
 {
     return [AVPlayerLayer class];
+}
+
+- (AVPlayerLayer *)playerLayer {
+    return (AVPlayerLayer *)[self layer];
 }
 
 -(AVPlayer *)player

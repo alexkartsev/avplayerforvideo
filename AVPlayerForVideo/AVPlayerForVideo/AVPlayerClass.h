@@ -14,6 +14,8 @@
 @interface AVPlayerClass : UIView
 
 @property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, strong) NSURL *url;
+
 
 - (void)setMovieToPlayer:(AVPlayer *) player;
 

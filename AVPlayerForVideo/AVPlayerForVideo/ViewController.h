@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AVPlayerClass.h"
+#import "MySlider.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet MySlider *mySlider;
 @property (nonatomic, strong) AVPlayer* player;
 @property (nonatomic, strong) IBOutlet AVPlayerClass* playerView;
-
 
 @end
 

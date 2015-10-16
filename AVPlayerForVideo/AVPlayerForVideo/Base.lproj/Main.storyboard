@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -25,23 +26,110 @@
                                     <constraint firstAttribute="height" constant="217" id="v3a-1U-ewQ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2N-X1-xin">
+                                <rect key="frame" x="328" y="455" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Gu-Bl-mIm"/>
+                                    <constraint firstAttribute="height" constant="30" id="IzW-BN-XK8"/>
+                                    <constraint firstAttribute="width" constant="46" id="cg3-Gt-Ddy"/>
+                                    <constraint firstAttribute="width" constant="46" id="wlO-ME-2tQ"/>
+                                </constraints>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Gu-Bl-mIm"/>
+                                        <exclude reference="wlO-ME-2tQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6r-Ik-Q7p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-6a-aeh">
+                                <rect key="frame" x="227" y="455" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Kgg-d8-RTt"/>
+                                    <constraint firstAttribute="height" constant="30" id="ecJ-2X-rgX"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qgr-50-2zT"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="25Y-hy-XVz" customClass="MySlider">
+                                <rect key="frame" x="105" y="43" width="390" height="31"/>
+                                <animations/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="386" id="lNT-HW-5zd"/>
+                                    <constraint firstAttribute="height" constant="30" id="xHc-PD-aB2"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fq7-Ji-A4b"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g73-G7-M9A">
+                                <rect key="frame" x="11" y="47" width="71" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HXK-Dm-2vO"/>
+                                    <constraint firstAttribute="width" constant="71" id="Tew-fK-8aQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJW-GO-IOS">
+                                <rect key="frame" x="519" y="47" width="71" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="3xz-ri-frc"/>
+                                    <constraint firstAttribute="height" constant="21" id="hYO-ht-rvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="dJW-GO-IOS" firstAttribute="top" secondItem="T8D-Uw-4ha" secondAttribute="bottom" constant="27" id="8Nl-fP-OHA"/>
+                            <constraint firstItem="25Y-hy-XVz" firstAttribute="top" secondItem="T8D-Uw-4ha" secondAttribute="bottom" constant="23" id="9yU-hG-r8H"/>
+                            <constraint firstItem="dJW-GO-IOS" firstAttribute="leading" secondItem="25Y-hy-XVz" secondAttribute="trailing" constant="26" id="EaA-66-uyO"/>
+                            <constraint firstItem="hnI-6a-aeh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="207" id="Kol-Os-lKW"/>
                             <constraint firstItem="woF-C6-Zb0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkS-Wz-mga"/>
                             <constraint firstItem="woF-C6-Zb0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WBr-86-CFC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c2N-X1-xin" secondAttribute="trailing" constant="206" id="YDu-k9-ge0"/>
+                            <constraint firstItem="c2N-X1-xin" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YR6-a4-mdW"/>
+                            <constraint firstItem="c2N-X1-xin" firstAttribute="top" secondItem="woF-C6-Zb0" secondAttribute="bottom" constant="47" id="f3H-eJ-SCp"/>
+                            <constraint firstItem="c2N-X1-xin" firstAttribute="top" secondItem="woF-C6-Zb0" secondAttribute="bottom" constant="50" id="g1d-Ux-dEd"/>
+                            <constraint firstItem="25Y-hy-XVz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j86-g5-7WY"/>
+                            <constraint firstItem="hnI-6a-aeh" firstAttribute="top" secondItem="woF-C6-Zb0" secondAttribute="bottom" constant="47" id="kUQ-PD-Pui"/>
+                            <constraint firstItem="25Y-hy-XVz" firstAttribute="leading" secondItem="g73-G7-M9A" secondAttribute="trailing" constant="25" id="nFZ-v0-dIp"/>
                             <constraint firstItem="woF-C6-Zb0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tyC-Cu-K0R"/>
+                            <constraint firstItem="g73-G7-M9A" firstAttribute="top" secondItem="T8D-Uw-4ha" secondAttribute="bottom" constant="27" id="vj1-n3-YlB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="QkS-Wz-mga"/>
+                                <exclude reference="YR6-a4-mdW"/>
+                                <exclude reference="g1d-Ux-dEd"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="currentPlayerTimeLabel" destination="g73-G7-M9A" id="qxd-HS-t0D"/>
+                        <outlet property="mySlider" destination="25Y-hy-XVz" id="H2r-Al-TQK"/>
                         <outlet property="playerView" destination="woF-C6-Zb0" id="7Yl-Y0-fx1"/>
+                        <outlet property="remainingPlayerTimeLabel" destination="dJW-GO-IOS" id="XBm-Nx-Jqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

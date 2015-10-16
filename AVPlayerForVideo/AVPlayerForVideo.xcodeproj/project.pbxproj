@@ -16,6 +16,7 @@
 		113297331BCFAC1F00664790 /* AVPlayerForVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 113297321BCFAC1F00664790 /* AVPlayerForVideoTests.m */; };
 		1132973E1BCFAC1F00664790 /* AVPlayerForVideoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132973D1BCFAC1F00664790 /* AVPlayerForVideoUITests.m */; };
 		1132974D1BCFADF300664790 /* AVPlayerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132974C1BCFADF300664790 /* AVPlayerClass.m */; settings = {ASSET_TAGS = (); }; };
+		113297931BCFF2D800664790 /* MySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 113297921BCFF2D800664790 /* MySlider.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		1132973F1BCFAC1F00664790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1132974B1BCFADF300664790 /* AVPlayerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerClass.h; sourceTree = "<group>"; };
 		1132974C1BCFADF300664790 /* AVPlayerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerClass.m; sourceTree = "<group>"; };
+		113297911BCFF2D800664790 /* MySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySlider.h; sourceTree = "<group>"; };
+		113297921BCFF2D800664790 /* MySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				1132971F1BCFAC1F00664790 /* ViewController.m */,
 				1132974B1BCFADF300664790 /* AVPlayerClass.h */,
 				1132974C1BCFADF300664790 /* AVPlayerClass.m */,
+				113297911BCFF2D800664790 /* MySlider.h */,
+				113297921BCFF2D800664790 /* MySlider.m */,
 				113297211BCFAC1F00664790 /* Main.storyboard */,
 				113297241BCFAC1F00664790 /* Assets.xcassets */,
 				113297261BCFAC1F00664790 /* LaunchScreen.storyboard */,
@@ -278,6 +283,7 @@
 				1132974D1BCFADF300664790 /* AVPlayerClass.m in Sources */,
 				113297201BCFAC1F00664790 /* ViewController.m in Sources */,
 				1132971D1BCFAC1F00664790 /* AppDelegate.m in Sources */,
+				113297931BCFF2D800664790 /* MySlider.m in Sources */,
 				1132971A1BCFAC1F00664790 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
