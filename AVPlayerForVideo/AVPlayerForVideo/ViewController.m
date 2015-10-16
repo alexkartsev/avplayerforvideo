@@ -25,8 +25,6 @@ static void *Context = &Context;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setURL:[NSURL URLWithString:@"http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"]];
-    [self.mySlider setAutoresizingMask:(UIViewAutoresizingFlexibleWidth)];
-    
     [self.mySlider addTarget:self action:@selector(beginScrubbing:) forControlEvents:UIControlEventTouchDown];
     [self.mySlider addTarget:self action:@selector(scrub:) forControlEvents:UIControlEventValueChanged];
     [self.mySlider addTarget:self action:@selector(endScrubbing:) forControlEvents:UIControlEventTouchUpInside];
@@ -35,17 +33,10 @@ static void *Context = &Context;
 
 - (void)doneLoadingAsset:(AVAsset *)asset withKeys:(NSArray *)keys {
     
-    // Remove observer from old playerItem and create new one
     if (self.playerItem) {
         [self.playerItem removeObserver:self forKeyPath:@"status"];
-        
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:AVPlayerItemDidPlayToEndTimeNotification
-                                                      object:self.playerItem];
     }
-    
     [self setPlayerItem:[AVPlayerItem playerItemWithAsset:asset]];
-    
     [self.playerItem addObserver:self
                       forKeyPath:@"status"
                          options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew)
@@ -67,9 +58,6 @@ static void *Context = &Context;
             [self doneLoadingAsset:self.asset withKeys:keys];
         });
     }];
-}
-
-- (IBAction)sliderAction:(id)sender {
 }
 
 - (IBAction)button:(id)sender {
@@ -122,7 +110,7 @@ static void *Context = &Context;
 }
 
 - (CMTime)duration {
-    if ([self.playerItem respondsToSelector:@selector(duration)] && // 4.3
+    if ([self.playerItem respondsToSelector:@selector(duration)] &&
         self.player.currentItem.status == AVPlayerItemStatusReadyToPlay) {
         if (CMTIME_IS_VALID(self.playerItem.duration))
             return self.playerItem.duration;
@@ -150,7 +138,6 @@ static void *Context = &Context;
                     break;
                     
                 case AVPlayerStatusReadyToPlay: {
-
                     [self addPlayerTimeObserver];
                 }
                     break;
@@ -158,15 +145,11 @@ static void *Context = &Context;
                 case AVPlayerStatusFailed: {
                     [self removePlayerTimeObserver];
                     [self syncScrobber];
-                    
-
                 }
                     break;
             }
         }
     }
-    
-
 }
 
 - (void)removePlayerTimeObserver {
@@ -178,8 +161,8 @@ static void *Context = &Context;
 
 - (void)dealloc {
     [self removePlayerTimeObserver];
+    [self.playerItem removeObserver:self forKeyPath:@"status"];
 }
-
 
 - (void)scrub:(id)sender {
     [self.player seekToTime:CMTimeMakeWithSeconds(self.mySlider.value, NSEC_PER_SEC)];
